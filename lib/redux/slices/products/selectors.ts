@@ -12,3 +12,6 @@ export const activeProductSelector = (state: ReduxState) => {
     });
   }
 };
+
+export const isFormOpenSelector = (state: ReduxState) =>
+  state.products.isFormOpen;
