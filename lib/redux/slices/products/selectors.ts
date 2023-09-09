@@ -15,3 +15,10 @@ export const activeProductSelector = (state: ReduxState) => {
 
 export const isFormOpenSelector = (state: ReduxState) =>
   state.products.isFormOpen;
+
+// export const filterByIdSelector = (state: ReduxState) => {
+//   const products = state.products;
+//   return products.items.filter((item) => {
+//     return item.id !== products.id;
+//   });
+// };

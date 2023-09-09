@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   productsItemsSelector,
   setActiveProduct,
-  unsetActiveProduct,
+  deleteProductItem,
 } from "@/lib/redux";
 import { v4 as uuid } from "uuid";
 
@@ -16,8 +16,8 @@ export function ProductList() {
     dispatch(setActiveProduct(id));
   }
 
-  function handleOnClickDelete() {
-    dispatch(unsetActiveProduct());
+  function handleOnClickDelete(id: string) {
+    dispatch(deleteProductItem(id));
   }
 
   return (
@@ -32,7 +32,9 @@ export function ProductList() {
                 View
               </button>{" "}
               <b></b>
-              <button onClick={handleOnClickDelete}>Delete</button>
+              <button onClick={() => handleOnClickDelete(product.id)}>
+                Delete
+              </button>
             </div>
           </li>
         ))}

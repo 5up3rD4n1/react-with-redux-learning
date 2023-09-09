@@ -1,4 +1,5 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
+import { v4 as uuid } from "uuid";
 
 export interface Product {
   id: string;
@@ -12,6 +13,7 @@ export interface ProductsSliceState {
   active: undefined | string;
   items: Product[];
   isFormOpen: boolean;
+  // id: string;
 }
 
 const initialState: ProductsSliceState = {
@@ -27,6 +29,7 @@ const initialState: ProductsSliceState = {
     },
   ],
   isFormOpen: false,
+  // id: uuid(),
 };
 
 export const productsSlice = createSlice({
@@ -50,6 +53,13 @@ export const productsSlice = createSlice({
     unsetActiveForm: (state) => {
       state.isFormOpen = false;
     },
+
+    deleteProductItem: (state, action: PayloadAction<string>) => {
+      const filtered = state.items.filter(
+        (product) => product.id !== action.payload
+      ); // filter by id
+      state.items = filtered;
+    },
   },
 });
 
@@ -59,6 +69,7 @@ const {
   unsetActiveProduct,
   setActiveForm,
   unsetActiveForm,
+  deleteProductItem,
 } = productsSlice.actions;
 
 export {
@@ -67,4 +78,5 @@ export {
   unsetActiveProduct,
   setActiveForm,
   unsetActiveForm,
+  deleteProductItem,
 };
