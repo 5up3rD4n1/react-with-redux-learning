@@ -1,0 +1,54 @@
+{
+  "products": [
+    {
+      "id": "764D7CF7-6B0B-4DCF-BE57-F8A943B7FC37",
+      "name": "t-shirt",
+      "price": 200
+    },
+    {
+      "id": "267354cb-4b59-4109-93fa-c56edfa829f6",
+      "name": "pant",
+      "price": 100
+    },
+    {
+      "id": "7d35cd2f-be6c-4ec1-90ad-7bcb4eca9664",
+      "name": "cap",
+      "price": 50
+    },
+    {
+      "id": "8c05a4f4-8b92-4d17-90f3-9e17e6fd91c0",
+      "name": "hat",
+      "price": 20
+    },
+    {
+      "id": "445fc5d9-5387-4193-9e09-a58471d59479",
+      "name": "hoodie",
+      "price": 2000
+    },
+    {
+      "id": "7c5b8b11-fc3b-4fa6-a438-d74d21e1b694",
+      "name": "toy",
+      "price": 100
+    },
+    {
+      "id": "69ccb04f-8a5d-4ab5-8a31-08ee427042cc",
+      "name": "dd",
+      "price": 245
+    },
+    {
+      "id": "c3a49502-a42b-4051-8cff-cae13a8a8f72",
+      "name": "chu",
+      "price": 25
+    },
+    {
+      "id": "465dde3c-d535-4307-b35d-686c9a4f7a2a",
+      "name": "chu2",
+      "price": 26
+    },
+    {
+      "id": "f18cff0e-da10-4554-8778-7105ccc0f3f3",
+      "name": "short",
+      "price": 100
+    }
+  ]
+}
