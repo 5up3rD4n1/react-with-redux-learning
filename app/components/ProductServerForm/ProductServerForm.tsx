@@ -3,6 +3,7 @@
 import client from "@/lib/clients/products.client";
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
+import { useContext } from "react";
 export default function ProductServerForm() {
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
@@ -23,6 +24,7 @@ export default function ProductServerForm() {
         id: uuid(),
         name,
         price,
+        isOpen: false,
       });
       setName("");
       setPrice(0);

@@ -1,5 +1,6 @@
 import axios, { AxiosInstance } from "axios";
 import { ProductDTO } from "./dtos/product.dto";
+import { UpdateProductRequestDTO } from "./dtos/update-product-request.dto";
 
 const BASE_URL = "http://localhost:8080";
 
@@ -18,21 +19,24 @@ export class ProductsClient {
     const response = await this.instance({ method: "post", url, data });
     return response.data;
   }
-  async getProduct(data: ProductDTO): Promise<ProductDTO> {
-    const url = "/products/id";
-    const response = await this.instance({ method: "get", url, data });
-    return response.data.id;
+  async getProduct(id: string): Promise<ProductDTO> {
+    const url = `/products/${id}`;
+    const response = await this.instance({ method: "get", url });
+    return response.data;
   }
-  async updateProduct(data: ProductDTO): Promise<ProductDTO> {
-    const url = "/products/id";
+  async updateProduct(
+    id: string,
+    data: UpdateProductRequestDTO
+  ): Promise<ProductDTO> {
+    const url = `/products/${id}`;
     const response = await this.instance({ method: "patch", url, data });
-    return response.data.id;
+    return response.data;
   }
 
-  async deleteProduct(data: ProductDTO): Promise<ProductDTO> {
-    const url = "/products/id";
-    const response = await this.instance({ method: "delete", url, data });
-    return response.data.id;
+  async deleteProduct(id: string): Promise<ProductDTO> {
+    const url = `/products/${id}`;
+    const response = await this.instance({ method: "delete", url });
+    return response.data;
   }
 }
 
